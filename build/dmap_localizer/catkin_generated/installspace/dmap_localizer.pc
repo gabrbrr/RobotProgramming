@@ -1,0 +1,8 @@
+prefix=/home/gabrbrr/Desktop/robot_programming/RobotProgramming/install
+
+Name: dmap_localizer
+Description: Description of dmap_localizer
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

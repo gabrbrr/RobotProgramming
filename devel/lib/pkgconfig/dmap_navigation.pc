@@ -1,0 +1,8 @@
+prefix=/home/gabrbrr/Desktop/robot_programming/RobotProgramming/devel
+
+Name: dmap_navigation
+Description: Description of dmap_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

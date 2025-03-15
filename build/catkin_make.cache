@@ -1,0 +1,2 @@
+dmap_localizer
+-DCATKIN_DEVEL_PREFIX=/home/gabrbrr/Desktop/robot_programming/RobotProgramming/devel -DCMAKE_INSTALL_PREFIX=/home/gabrbrr/Desktop/robot_programming/RobotProgramming/install -G Unix Makefiles
