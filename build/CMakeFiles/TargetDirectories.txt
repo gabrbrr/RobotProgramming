@@ -54,6 +54,7 @@
 /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build/dmap_localizer/CMakeFiles/sensor_msgs_generate_messages_py.dir
 /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build/dmap_localizer/CMakeFiles/geometry_msgs_generate_messages_py.dir
 /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build/dmap_localizer/CMakeFiles/nav_msgs_generate_messages_py.dir
+/home/gabrbrr/Desktop/robot_programming/RobotProgramming/build/dmap_localizer/CMakeFiles/controller_node.dir
 /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build/dmap_localizer/CMakeFiles/actionlib_generate_messages_eus.dir
 /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build/dmap_localizer/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir
 /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build/dmap_localizer/CMakeFiles/std_msgs_generate_messages_eus.dir

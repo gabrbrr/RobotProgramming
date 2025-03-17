@@ -393,6 +393,21 @@ nav_msgs_generate_messages_py/fast:
 .PHONY : nav_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+dmap_localizer/CMakeFiles/controller_node.dir/rule:
+	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f CMakeFiles/Makefile2 dmap_localizer/CMakeFiles/controller_node.dir/rule
+.PHONY : dmap_localizer/CMakeFiles/controller_node.dir/rule
+
+# Convenience name for target.
+controller_node: dmap_localizer/CMakeFiles/controller_node.dir/rule
+
+.PHONY : controller_node
+
+# fast build rule for target.
+controller_node/fast:
+	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f dmap_localizer/CMakeFiles/controller_node.dir/build.make dmap_localizer/CMakeFiles/controller_node.dir/build
+.PHONY : controller_node/fast
+
+# Convenience name for target.
 dmap_localizer/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
 	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f CMakeFiles/Makefile2 dmap_localizer/CMakeFiles/actionlib_generate_messages_eus.dir/rule
 .PHONY : dmap_localizer/CMakeFiles/actionlib_generate_messages_eus.dir/rule
@@ -857,6 +872,33 @@ rosgraph_msgs_generate_messages_nodejs/fast:
 	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f dmap_localizer/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make dmap_localizer/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
+src/controller_node.o: src/controller_node.cpp.o
+
+.PHONY : src/controller_node.o
+
+# target to build an object file
+src/controller_node.cpp.o:
+	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f dmap_localizer/CMakeFiles/controller_node.dir/build.make dmap_localizer/CMakeFiles/controller_node.dir/src/controller_node.cpp.o
+.PHONY : src/controller_node.cpp.o
+
+src/controller_node.i: src/controller_node.cpp.i
+
+.PHONY : src/controller_node.i
+
+# target to preprocess a source file
+src/controller_node.cpp.i:
+	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f dmap_localizer/CMakeFiles/controller_node.dir/build.make dmap_localizer/CMakeFiles/controller_node.dir/src/controller_node.cpp.i
+.PHONY : src/controller_node.cpp.i
+
+src/controller_node.s: src/controller_node.cpp.s
+
+.PHONY : src/controller_node.s
+
+# target to generate assembly for a file
+src/controller_node.cpp.s:
+	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f dmap_localizer/CMakeFiles/controller_node.dir/build.make dmap_localizer/CMakeFiles/controller_node.dir/src/controller_node.cpp.s
+.PHONY : src/controller_node.cpp.s
+
 src/dmap.o: src/dmap.cpp.o
 
 .PHONY : src/dmap.o
@@ -990,6 +1032,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... nav_msgs_generate_messages_py"
+	@echo "... controller_node"
 	@echo "... actionlib_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_eus"
@@ -1024,6 +1067,9 @@ help:
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... src/controller_node.o"
+	@echo "... src/controller_node.i"
+	@echo "... src/controller_node.s"
 	@echo "... src/dmap.o"
 	@echo "... src/dmap.i"
 	@echo "... src/dmap.s"

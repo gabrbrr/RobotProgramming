@@ -480,6 +480,19 @@ nav_msgs_generate_messages_py/fast:
 .PHONY : nav_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named controller_node
+
+# Build rule for target.
+controller_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_node
+.PHONY : controller_node
+
+# fast build rule for target.
+controller_node/fast:
+	$(MAKE) -f dmap_localizer/CMakeFiles/controller_node.dir/build.make dmap_localizer/CMakeFiles/controller_node.dir/build
+.PHONY : controller_node/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_generate_messages_eus
 
 # Build rule for target.
@@ -919,6 +932,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... nav_msgs_generate_messages_py"
+	@echo "... controller_node"
 	@echo "... actionlib_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_eus"
