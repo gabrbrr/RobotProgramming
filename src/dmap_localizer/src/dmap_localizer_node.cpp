@@ -30,6 +30,7 @@ private:
     std::string base_frame="base_link";
     std::string odom_frame="odom";
     std::string map_frame="map";
+    ros::Time odom_stamp;
     float influence_range=1.0f;
     int occ_threshold=127;
 
@@ -59,7 +60,10 @@ private:
         return iso;
     }
 
-    void odomCallback(const nav_msgs::Odometry::ConstPtr& msg) {}
+    void odomCallback(const nav_msgs::Odometry::ConstPtr& msg) {
+        odom_current = convertPoseToEigen(msg->pose.pose);
+        odom_stamp = msg->header.stamp; 
+    }
     void scanCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {}
 };
 
