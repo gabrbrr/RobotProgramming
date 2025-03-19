@@ -285,6 +285,19 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named scan_node
+
+# Build rule for target.
+scan_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 scan_node
+.PHONY : scan_node
+
+# fast build rule for target.
+scan_node/fast:
+	$(MAKE) -f dmap_localizer/CMakeFiles/scan_node.dir/build.make dmap_localizer/CMakeFiles/scan_node.dir/build
+.PHONY : scan_node/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_generate_messages_nodejs
 
 # Build rule for target.
@@ -917,6 +930,7 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... scan_node"
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_lisp"

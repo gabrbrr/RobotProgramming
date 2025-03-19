@@ -145,6 +145,9 @@ target_link_libraries(dmap_localizer_node ${catkin_LIBRARIES})
 add_executable(controller_node src/controller_node.cpp)
 target_link_libraries(controller_node ${catkin_LIBRARIES})
 
+add_executable(scan_node src/scan_node.cpp)
+target_link_libraries(scan_node ${catkin_LIBRARIES})
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use

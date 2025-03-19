@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+dmap_localizer/CMakeFiles/scan_node.dir/rule:
+	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f CMakeFiles/Makefile2 dmap_localizer/CMakeFiles/scan_node.dir/rule
+.PHONY : dmap_localizer/CMakeFiles/scan_node.dir/rule
+
+# Convenience name for target.
+scan_node: dmap_localizer/CMakeFiles/scan_node.dir/rule
+
+.PHONY : scan_node
+
+# fast build rule for target.
+scan_node/fast:
+	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f dmap_localizer/CMakeFiles/scan_node.dir/build.make dmap_localizer/CMakeFiles/scan_node.dir/build
+.PHONY : scan_node/fast
+
+# Convenience name for target.
 dmap_localizer/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
 	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f CMakeFiles/Makefile2 dmap_localizer/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
 .PHONY : dmap_localizer/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
@@ -1007,6 +1022,33 @@ src/grid_map.cpp.s:
 	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f dmap_localizer/CMakeFiles/dmap_localizer_node.dir/build.make dmap_localizer/CMakeFiles/dmap_localizer_node.dir/src/grid_map.cpp.s
 .PHONY : src/grid_map.cpp.s
 
+src/scan_node.o: src/scan_node.cpp.o
+
+.PHONY : src/scan_node.o
+
+# target to build an object file
+src/scan_node.cpp.o:
+	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f dmap_localizer/CMakeFiles/scan_node.dir/build.make dmap_localizer/CMakeFiles/scan_node.dir/src/scan_node.cpp.o
+.PHONY : src/scan_node.cpp.o
+
+src/scan_node.i: src/scan_node.cpp.i
+
+.PHONY : src/scan_node.i
+
+# target to preprocess a source file
+src/scan_node.cpp.i:
+	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f dmap_localizer/CMakeFiles/scan_node.dir/build.make dmap_localizer/CMakeFiles/scan_node.dir/src/scan_node.cpp.i
+.PHONY : src/scan_node.cpp.i
+
+src/scan_node.s: src/scan_node.cpp.s
+
+.PHONY : src/scan_node.s
+
+# target to generate assembly for a file
+src/scan_node.cpp.s:
+	cd /home/gabrbrr/Desktop/robot_programming/RobotProgramming/build && $(MAKE) -f dmap_localizer/CMakeFiles/scan_node.dir/build.make dmap_localizer/CMakeFiles/scan_node.dir/src/scan_node.cpp.s
+.PHONY : src/scan_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1017,6 +1059,7 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... edit_cache"
+	@echo "... scan_node"
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_lisp"
@@ -1082,6 +1125,9 @@ help:
 	@echo "... src/grid_map.o"
 	@echo "... src/grid_map.i"
 	@echo "... src/grid_map.s"
+	@echo "... src/scan_node.o"
+	@echo "... src/scan_node.i"
+	@echo "... src/scan_node.s"
 .PHONY : help
 
 
