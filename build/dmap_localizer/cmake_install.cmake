@@ -52,3 +52,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/dmap_localizer" TYPE FILE FILES "/home/gabrbrr/Desktop/robot_programming/RobotProgramming/src/dmap_localizer/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/dmap_localizer/launch" TYPE DIRECTORY FILES "/home/gabrbrr/Desktop/robot_programming/RobotProgramming/src/dmap_localizer/launch/")
+endif()
+

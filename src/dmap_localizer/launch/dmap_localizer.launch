@@ -1,0 +1,10 @@
+<launch>
+  <node name="map_server" pkg="map_server" type="map_server" 
+        args="$(find dmap_localizer)/files/diag_map.yaml" />
+
+  <node name="controller_node" pkg="dmap_localizer" type="controller_node" />
+
+  <node name="scan_node" pkg="dmap_localizer" type="scan_node" />
+
+  <node name="dmap_localizer" pkg="dmap_localizer" type="dmap_localizer_node" />
+</launch>

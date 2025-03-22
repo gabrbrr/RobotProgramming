@@ -12,12 +12,17 @@
 
 class DMapLocalizerNode {
 public:
-    DMapLocalizerNode() {
+    DMapLocalizerNode()  :
+    X_prev(Eigen::Isometry2f::Identity()),
+    odom_prev(Eigen::Isometry2f::Identity()),
+    odom_current(Eigen::Isometry2f::Identity()) {
         map_sub = nh.subscribe("/map", 10, &DMapLocalizerNode::mapCallback, this);
         scan_sub = nh.subscribe("/scan", 10, &DMapLocalizerNode::scanCallback, this);
         initial_pose_sub = nh.subscribe("/initialpose", 1, &DMapLocalizerNode::initialPoseCallback, this);
         odom_sub = nh.subscribe("/odom", 10, &DMapLocalizerNode::odomCallback, this);
         has_map = false;
+        transform_broadcaster = std::make_unique<tf2_ros::TransformBroadcaster>();
+
     }
 
 private:
@@ -26,6 +31,7 @@ private:
     ros::Subscriber map_sub, scan_sub, initial_pose_sub, odom_sub;
     DMapLocalizer dmap_localizer;
     Eigen::Isometry2f X_prev, odom_prev, odom_current;
+    std::unique_ptr<tf2_ros::TransformBroadcaster> transform_broadcaster;
     bool  has_map;
     std::string base_frame="base_link";
     std::string odom_frame="odom";
@@ -64,7 +70,51 @@ private:
         odom_current = convertPoseToEigen(msg->pose.pose);
         odom_stamp = msg->header.stamp; 
     }
-    void scanCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {}
+    
+    void scanCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
+        if (!has_map )
+            return;
+
+        std::vector<Eigen::Vector2f> measurements;
+        for (size_t i = 0; i < msg->ranges.size(); ++i) {
+            float range = msg->ranges[i];
+            if (range < msg->range_min || range > msg->range_max)
+                continue;
+            float angle = msg->angle_min + i * msg->angle_increment;
+            measurements.push_back(Eigen::Vector2f(range * cos(angle), range * sin(angle)));
+        }
+
+        Eigen::Isometry2f delta_odom = odom_prev.inverse() * odom_current;
+        dmap_localizer.X = X_prev * delta_odom;
+        
+        if (dmap_localizer.localize(measurements, 10)) {
+           //if(1){   
+            X_prev = dmap_localizer.X;
+            publishTransform();
+            
+        }
+
+
+
+        odom_prev = odom_current;
+    }
+    void publishTransform() {
+        geometry_msgs::TransformStamped transform_msg;
+        transform_msg.header.stamp = odom_stamp;
+        transform_msg.header.frame_id = map_frame;
+        transform_msg.child_frame_id = odom_frame;
+
+        Eigen::Isometry2f map_T_odom = X_prev * odom_current.inverse();
+        transform_msg.transform.translation.x = map_T_odom.translation().x();
+        transform_msg.transform.translation.y = map_T_odom.translation().y();
+
+        tf2::Quaternion q;
+        q.setRPY(0, 0, Eigen::Rotation2Df(map_T_odom.linear()).angle());
+        transform_msg.transform.rotation = tf2::toMsg(q);
+
+        transform_broadcaster->sendTransform(transform_msg);
+    }
+
 };
 
 int main(int argc, char** argv) {

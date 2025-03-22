@@ -12,10 +12,10 @@ private:
     ros::Subscriber cmd_vel_sub_;
     ros::Subscriber initial_pose_sub_;
     tf2_ros::TransformBroadcaster tf_broadcaster_;
-    double systematic_error_linear = 0.05; 
-    double systematic_error_angular = 0.05; 
-    double noise_stddev_linear = 0.05; 
-    double noise_stddev_angular = 0.05; 
+    double systematic_error_linear = 0.02; 
+    double systematic_error_angular = 0.02; 
+    double noise_stddev_linear = 0.02; 
+    double noise_stddev_angular = 0.02; 
     
     geometry_msgs::Twist current_velocity_;
     double x_, y_, theta_;
