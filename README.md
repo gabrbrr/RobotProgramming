@@ -2,7 +2,7 @@
 
 A ROS-based distance map ICP localizer. Developed for the Robot Programming course at Sapienza University of Rome.
 
-![Demo](demo.gif) *<!-- Add a GIF/screenshot of your simulation in action -->*
+![Demo](github/loc.gif) *<!-- Add a GIF/screenshot of your simulation in action -->*
 
 ## Overview
 This project implements a **distance-map-based ICP localizer** that:
