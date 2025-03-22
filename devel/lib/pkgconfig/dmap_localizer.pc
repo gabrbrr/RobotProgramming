@@ -1,8 +1,0 @@
-prefix=/home/gabrbrr/Desktop/robot_programming/RobotProgramming/devel
-
-Name: dmap_localizer
-Description: Description of dmap_localizer
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
