@@ -87,8 +87,8 @@ private:
         Eigen::Isometry2f delta_odom = odom_prev.inverse() * odom_current;
         dmap_localizer.X = X_prev * delta_odom;
         
-        //if (dmap_localizer.localize(measurements, 10)) {
-           if(1){   
+        if (dmap_localizer.localize(measurements, 10)) {
+           //if(1){   
             X_prev = dmap_localizer.X;
             publishTransform();
             
